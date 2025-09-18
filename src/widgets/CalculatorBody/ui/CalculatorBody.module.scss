@@ -1,0 +1,9 @@
+.CalculatorBody {
+  width: var(--calc-width);
+  height: var(--calc-height);
+  background: #000;
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  border-radius: 2rem;
+  padding: 10px 0;
+}

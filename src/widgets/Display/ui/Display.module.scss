@@ -1,0 +1,22 @@
+.Display {
+  display: flex;
+  padding: 0 10px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  color: var(--display-font-color);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.fontDisplayDefault {
+  font: var(--font-display)
+}
+
+.fontDisplayL {
+  font: var(--font-display-l)
+}
+
+.fontDisplayM {
+  font: var(--font-line-display-m)
+}

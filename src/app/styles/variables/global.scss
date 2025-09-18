@@ -1,0 +1,34 @@
+:root {
+  // sizes
+  --calc-width: 300px;
+  --calc-height: 600px;
+  --calc-btn-size: 50px;
+
+
+  // colors
+  --calc-body: #000;
+  --calc-digit-btn: #252525;
+  --calc-operations-btn: #fc9d0c;
+  --calc_special_btn: #a3a3a3;
+  --display-font-color: #fff;
+  --btn-font-color: #ffffff;
+
+  // fonts
+  --font-family: Consolas, "Times New Roman", serif;
+  --font-size-l: 24px;
+  --font-line-l: 32px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family);
+
+  --font-size-display: 56px;
+  --font-line-display: 64px;
+  --font-display: var(--font-size-display) / var(--font-line-display) var(--font-family);
+
+  --font-size-display-m: 32px;
+  --font-line-display-m: 40px;
+  --font-display-m: var(--font-size-display-m) / var(--font-line-display-m) var(--font-family);
+
+  --font-size-display-l: 40px;
+  --font-line-display-l: 48px;
+  --font-display-l: var(--font-size-display-l) / var(--font-line-display-l) var(--font-family);
+
+}
