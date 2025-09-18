@@ -4,6 +4,11 @@ import {BuildOptions} from "./types/config";
 
 export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
 
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
   const cssLoader = {
     rules: [
       {
@@ -14,9 +19,9 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
             loader: "css-loader",
             options: {
               esModule: false,
-
               modules: {
                 auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                exportLocalsConvention: "asIs",
                 localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
               },
             }
@@ -34,6 +39,7 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
   }
 
   return [
+    svgLoader,
     typescriptLoader,
     cssLoader,
   ]
