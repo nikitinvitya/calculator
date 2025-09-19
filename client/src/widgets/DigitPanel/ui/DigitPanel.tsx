@@ -1,8 +1,8 @@
-import {classNames} from "shared/lib/classNames";
+import {classNames} from "../../../shared/lib/classNames";
 import cls from './DigitPanel.module.scss'
-import {useExp} from "app/providers/ExpProvider/lib/useExp";
-import {Button} from "shared/ui/Button/Button";
-import {getButtons} from "features/getButtons";
+import {useExp} from "../../../app/providers/ExpProvider/lib/useExp";
+import {Button} from "../../../shared/ui/Button/Button";
+import {getButtons} from "../../../features/getButtons";
 
 interface DigitPanelProps {
   className?: string;

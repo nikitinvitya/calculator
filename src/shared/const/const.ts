@@ -1,1 +1,0 @@
-export const SYMBOLS_IN_EXP = 23;

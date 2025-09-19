@@ -1,5 +1,5 @@
-import cls from 'widgets/DigitPanel/ui/DigitPanel.module.scss'
-import DeleteIcon from 'shared/assets/icons/DeleteIcon.svg'
+import cls from '../../../widgets/DigitPanel/ui/DigitPanel.module.scss'
+import DeleteIcon from '../../../shared/assets/icons/DeleteIcon.svg'
 
 interface getButtonProps {
   changeExp: (symbol: string) => void;

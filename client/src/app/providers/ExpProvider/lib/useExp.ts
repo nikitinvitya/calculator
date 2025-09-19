@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import {ExpContext} from "./ExpContext";
-import {SYMBOLS_IN_EXP} from "shared/const/const";
+import {MAX_SYMBOLS_IN_EXP} from "../../../../shared/const/const";
 
 export interface UseExpResult {
   changeExp: (symbol: string) => void;
@@ -14,7 +14,7 @@ export const useExp = (): UseExpResult => {
 
   const changeExp = (symbol: string) => {
     setExp(prev => {
-      if (prev.length > SYMBOLS_IN_EXP) return prev
+      if (prev.length > MAX_SYMBOLS_IN_EXP) return prev
       const lastNumber = prev.split(/[\+\-\*\/]/).pop()
       const lastSymbol = prev.slice(-1)
 

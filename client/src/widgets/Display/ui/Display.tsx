@@ -1,6 +1,6 @@
-import {classNames} from "shared/lib/classNames";
+import {classNames} from "../../../shared/lib/classNames";
 import cls from './Display.module.scss'
-import {useExp} from "app/providers/ExpProvider/lib/useExp";
+import {useExp} from "../../../app/providers/ExpProvider/lib/useExp";
 import {useEffect, useState} from "react";
 
 interface DisplayProps {
