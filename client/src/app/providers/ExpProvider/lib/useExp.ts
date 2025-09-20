@@ -17,7 +17,8 @@ export const useExp = (): UseExpResult => {
   const changeExp = (symbol: string) => {
     setExp(prev => {
       if (prev.length > MAX_SYMBOLS_IN_EXP) return prev
-      const lastNumber = prev.split(/[\+\-\*\/]/).pop()
+      const operatorRegex = /[-+*/]/;
+      const lastNumber = prev.split(operatorRegex).pop()
       const lastSymbol = prev.slice(-1)
 
       if (['+', '*', '/'].includes(symbol) && prev === '0') return prev
