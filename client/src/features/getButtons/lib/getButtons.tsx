@@ -11,12 +11,12 @@ export const getButtons = ({changeExp, clearExp, deleteLast}: getButtonProps) =>
     {children: "AC", onClick: clearExp, className: cls.specialBtn},
     {children: <DeleteIcon className={cls.deleteLastBtn}/>, onClick: deleteLast, className: cls.specialBtn},
     {children: "%", onClick: () => changeExp("%"), className: cls.specialBtn},
-    {children: "÷", onClick: () => changeExp("/"), className: cls.operationsBtn},
+    {children: "÷", onClick: () => changeExp("÷"), className: cls.operationsBtn},
 
     {children: "7", onClick: () => changeExp("7"), className: cls.digitsBtn},
     {children: "8", onClick: () => changeExp("8"), className: cls.digitsBtn},
     {children: "9", onClick: () => changeExp("9"), className: cls.digitsBtn},
-    {children: "×", onClick: () => changeExp("*"), className: cls.operationsBtn},
+    {children: "×", onClick: () => changeExp("×"), className: cls.operationsBtn},
 
     {children: "4", onClick: () => changeExp("4"), className: cls.digitsBtn},
     {children: "5", onClick: () => changeExp("5"), className: cls.digitsBtn},
