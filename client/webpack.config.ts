@@ -10,6 +10,11 @@ export default (env: BuildEnv) => {
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html'),
     src: path.resolve(__dirname, 'src'),
+    app: path.resolve(__dirname, 'src/app'),
+    widgets: path.resolve(__dirname, 'src/widgets'),
+    features: path.resolve(__dirname, 'src/features'),
+    entities: path.resolve(__dirname, 'src/entities'),
+    shared: path.resolve(__dirname, 'src/shared'),
   }
 
   const PORT = env.port || 3000;

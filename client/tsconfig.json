@@ -7,9 +7,9 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
-    "baseUrl": "../..",
+    "baseUrl": "src",
     "paths": {
-      "*": ["../src/*"]
+      "*": ["*"],
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true

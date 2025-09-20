@@ -5,6 +5,11 @@ export interface BuildPaths {
   build: string;
   html: string;
   src: string;
+  shared: string;
+  entities: string;
+  app: string;
+  features: string;
+  widgets: string;
 }
 
 export interface BuildEnv {

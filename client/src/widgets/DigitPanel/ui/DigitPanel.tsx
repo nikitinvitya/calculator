@@ -3,14 +3,12 @@ import cls from './DigitPanel.module.scss'
 import {useExp} from "../../../app/providers/ExpProvider/lib/useExp";
 import {Button} from "../../../shared/ui/Button/Button";
 import {getButtons} from "../../../features/getButtons";
-
-interface DigitPanelProps {
-  className?: string;
-}
+import {useResult} from "../../../app/providers/ResultProvider/lib/useResult";
 
 export const DigitPanel = () => {
-  const {changeExp, clearExp, deleteLast, calcResult} = useExp();
-  const buttons = getButtons({changeExp, clearExp, deleteLast, calcResult})
+  const {changeExp, clearExp, deleteLast, exp} = useExp();
+  const {calcResult} = useResult()
+  const buttons = getButtons({changeExp, clearExp, deleteLast, calcResult, exp})
 
   return (
     <div className={classNames(cls.DigitPanel)}>

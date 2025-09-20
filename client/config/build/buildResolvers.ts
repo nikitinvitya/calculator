@@ -7,6 +7,12 @@ export const buildResolvers = ({paths}: BuildOptions): ResolveOptions => {
     preferAbsolute: true,
     modules: [paths.src, "node_modules"],
     mainFiles: ["index"],
-    alias: {},
+    alias: {
+      app: paths.app,
+      widgets: paths.widgets,
+      features: paths.features,
+      entities: paths.entities,
+      shared: paths.shared,
+    },
   }
 }

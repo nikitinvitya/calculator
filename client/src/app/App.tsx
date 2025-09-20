@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/index.scss'
-import {classNames} from "../shared/lib/classNames";
-import {CalculatorBody} from "../widgets/CalculatorBody";
+import {classNames} from "shared/lib/classNames";
+import {CalculatorBody} from "widgets/CalculatorBody";
 
 const App = () => {
   return (

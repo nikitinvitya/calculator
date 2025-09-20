@@ -1,6 +1,6 @@
-import {classNames} from "../../lib/classNames";
 import cls from './Button.module.scss'
 import React from "react";
+import {classNames} from "shared/lib/classNames";
 
 interface ButtonProps {
   className?: string;

@@ -38,7 +38,6 @@ func applyOperation(firstNumber, secondNumber float64, operation rune) (float64,
 	default:
 		return 0, errors.New("unknown operation")
 	}
-
 }
 
 func CalculateExpression(exp string) (float64, error) {

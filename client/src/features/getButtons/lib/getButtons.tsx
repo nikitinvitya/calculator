@@ -1,14 +1,15 @@
-import cls from '../../../widgets/DigitPanel/ui/DigitPanel.module.scss'
-import DeleteIcon from '../../../shared/assets/icons/DeleteIcon.svg'
+import cls from 'widgets/DigitPanel/ui/DigitPanel.module.scss'
+import DeleteIcon from 'shared/assets/icons/DeleteIcon.svg'
 
 interface getButtonProps {
   changeExp: (symbol: string) => void;
   clearExp: () => void;
   deleteLast: () => void;
-  calcResult: () => void;
+  calcResult: (exp: string) => void;
+  exp: string;
 }
 
-export const getButtons = ({changeExp, clearExp, deleteLast, calcResult}: getButtonProps) => [
+export const getButtons = ({changeExp, clearExp, deleteLast, calcResult, exp}: getButtonProps) => [
     {children: "AC", onClick: clearExp, className: cls.specialBtn},
     {children: <DeleteIcon className={cls.deleteLastBtn}/>, onClick: deleteLast, className: cls.specialBtn},
     {children: "%", onClick: () => changeExp("%"), className: cls.specialBtn},
@@ -31,6 +32,6 @@ export const getButtons = ({changeExp, clearExp, deleteLast, calcResult}: getBut
 
     {children: "0", onClick: () => changeExp("0"), className: [cls.digitsBtn, cls.zero].join(' ')},
     {children: ".", onClick: () => changeExp("."), className: cls.digitsBtn},
-    {children: "=", onClick: () => calcResult(), className: cls.operationsBtn},
+    {children: "=", onClick: () => calcResult(exp), className: cls.operationsBtn},
   ]
 ;
