@@ -1,11 +1,13 @@
 import {useContext} from "react";
 import {ExpContext} from "./ExpContext";
 import {MAX_SYMBOLS_IN_EXP} from "../../../../shared/const/const";
+import {getResult} from "../../../../shared/api/getResult";
 
 export interface UseExpResult {
   changeExp: (symbol: string) => void;
   clearExp: () => void;
   deleteLast: () => void;
+  calcResult: () => void;
   exp: string;
 }
 
@@ -52,5 +54,17 @@ export const useExp = (): UseExpResult => {
     })
   }
 
-  return {exp, changeExp, clearExp, deleteLast}
+  const calcResult = async () => {
+    try {
+      const data = await getResult(exp)
+      if(data.error) {
+        setExp("Error")
+      }
+      setExp(String(data.result))
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  return {exp, changeExp, clearExp, deleteLast, calcResult}
 }

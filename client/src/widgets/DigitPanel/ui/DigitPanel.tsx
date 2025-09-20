@@ -9,8 +9,8 @@ interface DigitPanelProps {
 }
 
 export const DigitPanel = () => {
-  const {changeExp, clearExp, deleteLast} = useExp();
-  const buttons = getButtons({changeExp, clearExp, deleteLast})
+  const {changeExp, clearExp, deleteLast, calcResult} = useExp();
+  const buttons = getButtons({changeExp, clearExp, deleteLast, calcResult})
 
   return (
     <div className={classNames(cls.DigitPanel)}>
