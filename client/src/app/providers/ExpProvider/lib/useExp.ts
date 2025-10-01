@@ -14,47 +14,70 @@ export const useExp = (): UseExpResult => {
   const {exp, setExp} = useContext(ExpContext)
   const {result, clearResult} = useResult()
 
-  const mathOperators = ['+', '-', '*', '/'];
+  const mathOperators = ['+', '-', '÷', '×'];
 
   const changeExp = (symbol: string) => {
     if (result) {
       clearResult();
-      clearExp();
+      setExp('0');
     }
 
     setExp(prev => {
       if (prev.length >= MAX_SYMBOLS_IN_EXP) return prev;
 
-      const operatorRegex = /[-+*/]/;
-      const lastNumber = prev.split(operatorRegex).pop();
       const lastSymbol = prev.slice(-1);
 
+      if (mathOperators.includes(symbol)) {
+        if (prev === '0') {
+          return symbol === '-' ? '-' : prev;
+        }
+
+        const secondToLastSymbol = prev.slice(-2, -1);
+
+        if (mathOperators.includes(lastSymbol)) {
+          if (mathOperators.includes(secondToLastSymbol)) {
+            return prev;
+          }
+
+          if (symbol === '-' && lastSymbol !== '-') {
+            return prev + symbol;
+          }
+
+
+          return prev.slice(0, -1) + symbol;
+        }
+
+        return prev + symbol;
+      }
+
+      if (symbol === '.') {
+        const operatorRegex = /[-+×÷]/;
+        const lastNumber = prev.split(operatorRegex).pop();
+        if (lastNumber?.includes('.')) {
+          return prev;
+        }
+        if (mathOperators.includes(lastSymbol)) {
+          return prev + '0.';
+        }
+        return prev + '.';
+      }
+
       if (prev === '0') {
-        if (!/[0-9-]/.test(symbol)) return prev;
-        if (symbol === '.') return '0.';
         return symbol;
       }
 
-      if (mathOperators.includes(symbol) && mathOperators.includes(lastSymbol)) {
-        return prev;
-      }
-
-      if (symbol === '.' && lastNumber?.includes('.')) {
-        return prev;
-      }
-
       if (symbol === '%') {
+        const operatorRegex = /[-+×÷]/;
+        const lastNumber = prev.split(operatorRegex).pop();
         if (!lastNumber) return prev;
         const withoutLast = prev.slice(0, prev.length - lastNumber.length);
-        const percentValue = String(parseFloat(lastNumber) / 10);
+        const percentValue = String(parseFloat(lastNumber) / 100);
         return withoutLast + percentValue;
       }
 
       return prev + symbol;
     });
   };
-
-
 
   const clearExp = () => {
     if(result) {
